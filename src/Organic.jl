@@ -10,6 +10,7 @@ function parse(file::AbstractString)
 
     meta = Dict("title" => title, "description" => description)
     content = run(`pandoc $(file) -f org -t html`)
-
     return meta, content
+end
+
 end
