@@ -10,7 +10,7 @@ function parse(file::AbstractString)
     slug = split(split(file, "/")[end], ".")[1]
 
     meta = Dict("title" => title, "description" => description, "slug" => slug)
-    content = read(`pandoc $(file) -f org -t html`, String)
+    content = read(`pandoc $(file) --katex -f org -t html`, String)
     return meta, content
 end
 
